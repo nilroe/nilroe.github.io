@@ -38,8 +38,9 @@
       $msjCorreo .= "\r\n";
 
 
-      /*
+      
     if (mail($para, $subject, $msjCorreo, $headers)) {
+         mail($email, $subject2, $msjCorreo, $headers); //copia a cliente
          echo "<script language='javascript'>
             alert('Mensaje enviado, muchas gracias.');
          </script>";
@@ -47,10 +48,11 @@
          echo "<script language='javascript'>
             alert('fallado');
          </script>";
-    } */
+    } 
+    /*
     mail($para, $subject, $msjCorreo, $headers);
     mail($email, $subject2, $msjCorreo, $headers); //copia a cliente
-
+*/
 
   }
 
