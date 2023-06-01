@@ -1,14 +1,15 @@
 <?php
    //Reseteamos variables a 0.
-   $nombre = $email = $subject = $mensaje = $para = $headers = $msjCorreo = NULL;
+   $nombre = $email = $subject = $mensaje = $para = $headers = $msjCorreo = $fecha = $hora = $q = $tlf = $subject2 = NULL;
 
    if (isset($_POST['submit'])) {
       //Obtenemos valores input formulario
       $nombre = $_POST['name'];
       $email = $_POST['email'];
-      $subject = "Reserva de mesa desde la Web";   
+      $subject = "Reserva de mesa desde la Web";  
+      $subject2 = "Detalle de su reserva en M'ENAMORA SEGORBE" ;
       $mensaje = $_POST['message'];
-      $para = 'condeeorl@gmail.com';
+      $para = "condeeorl@gmail.com";
       $fecha = $_POST['date'];
       $hora = $_POST['time'];
       $q = $_POST['people'];
@@ -25,17 +26,19 @@
       $msjCorreo .= "\r\n";
       $msjCorreo .= "Email: " . $email;
       $msjCorreo .= "\r\n";
-      $msjCorreo .= "Telefono: " . $tlf
+      $msjCorreo .= "Telefono: " . $tlf;
       $msjCorreo .= "\r\n";
-      $msjCorreo .= "Fecha: " . $fecha
+      $msjCorreo .= "Fecha: " . $fecha;
       $msjCorreo .= "\r\n";
-      $msjCorreo .= "Hora: " . $hora
+      $msjCorreo .= "Hora: " . $hora;
       $msjCorreo .= "\r\n";
-      $msjCorreo .= "Personas: " . $q
+      $msjCorreo .= "Personas: " . $q;
       $msjCorreo .= "\r\n";
       $msjCorreo .= "Mensaje: " . $mensaje;
       $msjCorreo .= "\r\n";
 
+
+      /*
     if (mail($para, $subject, $msjCorreo, $headers)) {
          echo "<script language='javascript'>
             alert('Mensaje enviado, muchas gracias.');
@@ -44,6 +47,11 @@
          echo "<script language='javascript'>
             alert('fallado');
          </script>";
-    }
+    } */
+    mail($para, $subject, $msjCorreo, $headers);
+    mail($email, $subject2, $msjCorreo, $headers); //copia a cliente
+
+
   }
+
 ?>
