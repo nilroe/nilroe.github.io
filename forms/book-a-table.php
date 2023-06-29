@@ -26,10 +26,7 @@
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   
   $book_a_table->smtp = array(
-    'host' => 'mail.menamorasegorbe.es',
-    'username' => 'reservas@menamorasegorbe.es',
-    'password' => 'abel',
-    'port' => '587'
+
   );
   
 
