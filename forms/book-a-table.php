@@ -7,7 +7,7 @@
   */
 
   // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'condeeorl@gmail.com';
+  $receiving_email_address = 'reservas@menamorasegorbe.es';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
     include( $php_email_form );
@@ -24,14 +24,14 @@
   $book_a_table->subject = "Reserva de mesa desde la Web";
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
+  
   $book_a_table->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
+    'host' => 'mail.menamorasegorbe.es',
+    'username' => 'reservas@menamorasegorbe.es',
+    'password' => 'abel',
     'port' => '587'
   );
-  */
+  
 
   $book_a_table->add_message( $_POST['name'], 'Nombre');
   $book_a_table->add_message( $_POST['email'], 'Email');
@@ -42,4 +42,5 @@
   $book_a_table->add_message( $_POST['message'], 'Mensaje/Comentarios');
 
   echo $book_a_table->send();
+
 ?>

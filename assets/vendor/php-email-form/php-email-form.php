@@ -113,11 +113,7 @@ class PHP_Email_Form {
       }
     }
 
-    if( $this->ajax ) {
-      if( !isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
-        return $this->error_msg['ajax_error'];
-      }
-    }
+   
 
     $to = filter_var( $this->to, FILTER_VALIDATE_EMAIL);
     $from_name = filter_var( $this->from_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
